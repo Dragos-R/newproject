@@ -1,8 +1,5 @@
 pipeline {
     agent any
-       triggers {
-        pollSCM "* * *"
-       }
     stages {
         stage('Provisioning EC2 Instance') { 
             steps {
