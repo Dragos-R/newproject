@@ -15,7 +15,7 @@ cat > install.yml << EOF
     connection: local
     tasks:
       - name: Install wget
-        yum: name=wget state=installed
+        yum: name=wget state=latest
 EOF
 sudo chmod 777 install.yml
 ansible-playbook install.yml
