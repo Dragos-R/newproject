@@ -1,10 +1,9 @@
-userdata.sh
-
 #! /bin/bash
-sudo apt-get update
-sudo apt install apache2 -y
-sudo service apache2 start
-sudo apt-get install ansible -y
+sudo yum  update -y
+sudo yum install httpd -y
+sudo service httpd start
+sudo sudo yum-config-manager --enable epel
+sudo yum install ansible -y
 echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
 echo "localhost ansible_connection=local" | sudo tee etc/ansible/hosts
 cat > install.yml << EOF
